@@ -1,0 +1,128 @@
+
+<script type="text/javascript" >
+	
+function f1()
+{
+
+var uname= document.getElementById('name').value;
+if(uname=="")
+	{ document.getElementById('dname').innerHTML="name cannot be empty";}
+var name= uname.split("");
+
+for(var a=0; a<name.length;a++)
+{
+if((name[a]<'A'||name[a]>'Z') ||(name[a]<'a'||name[a]>'z') || name[a]!='.'|| name[a]!='-')
+	{  document.getElementById('dname').innerHTML="invalid character";
+break;}
+
+}
+ if(name[0]>=0 && name[0]<=9 )
+ 	{document.getElementById('dname').innerHTML="must start with a letter";}
+
+
+	
+var email= document.getElementById('email').value;
+if(email=="")
+	{ document.getElementById('demail').innerHTML="email cannot be empty";}
+var emailsplit= email.split("");
+for(var b=0; b<emailsplit.length;b++)
+	{
+if((emailsplit[b]>='A' && emailsplit[b]<='Z') ||(emailsplit[b]>=0 && emailsplit[b]>=9) || emailsplit[b]=='@'|| emailsplit=='.')
+{continue;
+
+}
+else{document.getElementById('demail').innerHTML="invalid email"; }}
+var gender1= document.getElementById('1').value;
+var gender2=document.getElementById('2').value;
+var gender3=document.getElementById('3').value;
+if(gender1=="" && gender2=="" && gender3=="")
+{ document.getElementById('dgender').innerHTML="Choose Atleast one";}
+var date= document.getElementById("date").value;
+var month= document.getElementById("month").value;
+var year= document.getElementById("year").value;
+if(date==""|| month=="" || year=="")
+{
+document.getElementById('divdate').innerHTML="date cannot be empty";
+}
+if(date<=0 && date>=31)
+	{document.getElementById('divdate').innerHTML="Invalid date";}
+}
+
+</script>
+<fieldset>
+    <legend><b>REGISTRATION</b></legend>
+    
+	<form>
+		<br/>
+		<table width="100%" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>Name</td>
+				<td>:</td>
+				<td><input name="name" type="text" id="name">  <div id="dname"> </div> </td>
+				<td> </td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td>
+					<input name="email" type="text" id="email">
+					<abbr title="hint: sample@example.com"><b>i</b></abbr>  <div id="demail">  </div>
+				</td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>User Name</td>
+				<td>:</td>
+				<td><input name="userName" type="text"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Password</td>
+				<td>:</td>
+				<td><input name="password" type="password"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td>:</td>
+				<td><input name="confirmPassword" type="password"></td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Gender</legend>    
+						<input name="gender" type="radio" id="1" value="Male">Male
+						<input name="gender" type="radio" id="2" value="Female">Female
+						<input name="gender" type="radio" id="3" value="Other">Other
+						
+					</fieldset>
+					<div id="dgender"> </div>
+				</td>
+				<td></td>
+			</tr>		
+			<tr><td colspan="4"><hr/></td></tr>
+			<tr>
+				<td colspan="3">
+					<fieldset>
+						<legend>Date of Birth</legend>    
+						<input type="text" size="2" id="date" />/
+						<input type="text" size="2" id="month"/>/
+						<input type="text" size="4" id="year"/>
+						<font size="2"><i>(dd/mm/yyyy)</i></font><div id="divdate"> </div>
+					</fieldset>
+				</td>
+				<td></td>
+			</tr>
+			
+		</table>
+		<hr/>
+		<input type="button" value="Submit" onclick="f1()">
+		<input type="reset">
+	</form>
+</fieldset>
